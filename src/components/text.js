@@ -26,10 +26,10 @@ class Text extends Component {
     
     return (
       <div>
-        <p>&nbsp;</p>
+        <hr />
         Enter your name: <input type="text" onChange={this.handleKeyChange.bind(this)} />
         <button onClick={this.handleSubmit.bind(this)}>Click</button>
-        <p>&nbsp;</p>
+        <hr />
       </div>
     )
   }
