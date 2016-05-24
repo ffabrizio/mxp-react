@@ -1,6 +1,6 @@
 import alt from '../alt'
 
-class Actions {
+class UserActions {
   
   constructor() {
     
@@ -11,4 +11,4 @@ class Actions {
   }
 }
 
-export default alt.createActions(Actions)
+export default alt.createActions(UserActions)

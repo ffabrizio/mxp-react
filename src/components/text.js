@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Actions from '../actions/actions'
+import UserActions from '../actions/useractions'
 
 class Text extends Component {
   constructor(props) {
@@ -10,15 +10,15 @@ class Text extends Component {
     }
   }
   
-  handleKeyChange(event) {
+  handleKeyChange = (event) => {
     this.setState({
       txt: event.target.value,
     })
   }
   
-  handleSubmit() {
+  handleSubmit = () => {
     if (this.state.txt !== '') {
-      Actions.sync({name: this.state.txt})
+      UserActions.sync({name: this.state.txt})
     }
   }
 
@@ -27,8 +27,8 @@ class Text extends Component {
     return (
       <div>
         <hr />
-        Enter your name: <input type="text" onChange={this.handleKeyChange.bind(this)} />
-        <button onClick={this.handleSubmit.bind(this)}>Click</button>
+        Enter your name: <input type="text" onChange={this.handleKeyChange} />
+        <button onClick={this.handleSubmit}>Click</button>
         <hr />
       </div>
     )

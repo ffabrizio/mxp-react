@@ -1,12 +1,12 @@
 import alt from '../alt'
-import Actions from '../actions/actions'
+import UserActions from '../actions/useractions'
 
 class UserStore {
   
   constructor() {
     
     this.state = { }
-    this.bindActions(Actions)
+    this.bindActions(UserActions)
     
   }
   

@@ -6,17 +6,17 @@ class Promo extends Component {
   render() {
     
     let userState = this.props.user || {}
-    let greet = <p></p>
+    let greet = <h2>{this.props.title}</h2>
     if (userState.name) {
-      greet = <p>Hi { userState.name }</p>
+      greet = <div><h2>{this.props.title}</h2><strong><i>Hi { userState.name }</i></strong></div>
     }
     
     return (
       
       <div>
-        <h2>{this.props.title}</h2>
-        <p>{this.props.content}</p>
         { greet }
+        <p>{this.props.content}</p>
+        
       </div>
       
     )
