@@ -1,11 +1,11 @@
 import React from 'react'
-import Wrapper from './components/wrapper'
+import Container from './components/container'
 import Video from './components/video'
 import Promo from './components/promo'
 import Text from './components/text'
 
 const modules = {
-  'wrapper' : Wrapper,
+  'container' : Container,
   'video' : Video,
   'promo' : Promo,
   'text' : Text
