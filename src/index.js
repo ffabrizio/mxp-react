@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PageCoordinator from './pageCoordinator'
 import Container from './components/container'
-import _vp from 'is-in-viewport'
+import isInViewport from 'is-in-viewport'
 
 let defaultTxt = ['Aenean consectetur tincidunt efficitur. Vivamus a justo et mi dapibus fringilla. Maecenas cursus arcu vel mauris efficitur vestibulum. Morbi quis leo in purus cursus vehicula. Ut dui ante, maximus vel nunc sed, mollis luctus mi. In at velit et ipsum euismod sodales id eget metus. Duis elementum nulla sit amet ligula pharetra congue. Donec sit amet nisl sed purus ornare rutrum. Maecenas vitae feugiat magna, nec maximus est.']
 
@@ -34,15 +34,36 @@ ReactDOM.render(
 
 window.v = $('video:in-viewport()').get(0)
 window.v.play()
-  
-$(window).scroll(() => {
-  
-  let v = $('video:in-viewport(300)').get(0)
-  if (v && window.v !== v) {
+
+const playVideo = (v) => {
+  if (v) {
     v.play().then(() => {
-      window.v.pause()
+      if (window.v && window.v !== v) window.v.pause()
       window.v = v
     })
   }
+}
+
+const pauseVideo = (v) => {
+  if (v) {
+    v.pause()
+    window.v = v
+  }
+}
+
+$(document).on('click', 'video', (v) => {
+  
+  let currentVideo = v.target
+  if (currentVideo.paused) {
+    playVideo(currentVideo)
+  } else {
+    pauseVideo(currentVideo)
+  }
+})
+
+$(window).scroll(() => {
+  
+  let v = $('video:in-viewport(300)').get(0)
+  playVideo(v)
   
 })

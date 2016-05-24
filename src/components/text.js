@@ -11,9 +11,7 @@ class Text extends Component {
   }
   
   handleKeyChange = (event) => {
-    this.setState({
-      txt: event.target.value,
-    })
+    this.setState({ txt: event.target.value })
   }
   
   handleSubmit = () => {
@@ -26,9 +24,10 @@ class Text extends Component {
     
     return (
       <div>
-        <hr />
-        Enter your name: <input type="text" onChange={this.handleKeyChange} />
-        <button onClick={this.handleSubmit}>Click</button>
+        <p>
+          Enter your name: <input type="text" onChange={this.handleKeyChange} />
+          <button onClick={this.handleSubmit}>Set</button>
+        </p>
         <hr />
       </div>
     )
