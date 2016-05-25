@@ -14,7 +14,7 @@ class UserStore {
   }
   
   onSync(data) {
-    this.setState(...this.state, data)
+    this.setState(data)
     LocalProfile.set(this.state)
   }
 
