@@ -1,17 +1,21 @@
 import alt from '../alt'
 import UserActions from '../actions/useractions'
+import LocalProfile from '../sources/localprofile'
+
+const profileLocalStorageKey = 'mxp-profile'
 
 class UserStore {
-  
+
   constructor() {
     
-    this.state = { }
+    this.state = LocalProfile.get()
     this.bindActions(UserActions)
     
   }
   
   onSync(data) {
-    this.setState(data)
+    this.setState(...this.state, data)
+    LocalProfile.set(this.state)
   }
 
 }

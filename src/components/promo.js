@@ -5,7 +5,7 @@ class Promo extends Component {
 
   render() {
     
-    let user = this.props.user || {}
+    let user = this.props.profile.user || {}
     let greet = <h2>{this.props.title}</h2>
     if (user.name) {
       greet = 

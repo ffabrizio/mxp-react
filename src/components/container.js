@@ -11,7 +11,7 @@ class Container extends Component {
       <AltContainer
         stores={[UserStore]}
         inject={{
-          user: () => UserStore.getState()
+          profile: () => UserStore.getState()
         }}>
         {this.props.children}
       </AltContainer>

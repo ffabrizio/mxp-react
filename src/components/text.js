@@ -16,7 +16,7 @@ class Text extends Component {
   
   handleSubmit = () => {
     if (this.state.txt !== '') {
-      UserActions.sync({name: this.state.txt})
+      UserActions.sync({ user: { name: this.state.txt }} )
     }
   }
 
