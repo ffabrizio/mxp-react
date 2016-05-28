@@ -6,7 +6,7 @@ class Text extends Component {
     super(props)
     
     this.state = {
-      txt: ''
+      txt: this.props.profile.user.name
     }
   }
   
@@ -25,7 +25,7 @@ class Text extends Component {
     return (
       <div>
         <p>
-          Enter your name: <input type="text" onChange={this.handleKeyChange} />
+          Enter your name: <input type="text" value={this.state.txt} onChange={this.handleKeyChange} />
           <button onClick={this.handleSubmit}>Set</button>
         </p>
         <hr />

@@ -2,9 +2,6 @@ import React, {Component} from 'react'
 
 class Video extends Component {
   
-  
-  
-
   render() {
 
     let mp4 = this.props.videoUrl
@@ -16,7 +13,7 @@ class Video extends Component {
     
     return (
       
-      <video width="400" poster={poster}>
+      <video width="400" poster={poster} onClick={this.toggle}>
         <source src={mp4} type="video/mp4" />
         <source src={ogv} type="video/ogv" />
         <source src={webm} type="video/webm" />
