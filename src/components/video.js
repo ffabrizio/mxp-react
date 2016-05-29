@@ -12,13 +12,11 @@ class Video extends Component {
       .replace('.mp4', '.jpg')
     
     return (
-      
       <video width="400" poster={poster} onClick={this.toggle}>
         <source src={mp4} type="video/mp4" />
         <source src={ogv} type="video/ogv" />
         <source src={webm} type="video/webm" />
       </video>
-      
     )
   }
 }

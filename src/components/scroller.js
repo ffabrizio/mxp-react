@@ -53,6 +53,9 @@ class Scroller extends Component {
     modules.map((m) => {
       if (this.isElementInViewport(m)) { 
         this.modulesInViewPort.push(m)
+        m.className = 'module active'
+      } else {
+        m.className = 'module inactive'
       }
     })
     
@@ -68,13 +71,25 @@ class Scroller extends Component {
   }
   
   isElementInViewport(el) {
-    let rect = el.getBoundingClientRect()
-    
-    return rect.bottom > 0 &&
-      rect.right > 0 &&
-      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
-      rect.top < (window.innerHeight || document.documentElement.clientHeight)
-  }
+    if (!el) return false
+    var rect     = el.getBoundingClientRect(),
+        vWidth   = window.innerWidth || doc.documentElement.clientWidth,
+        vHeight  = (window.innerHeight || doc.documentElement.clientHeight),
+        efp      = (x, y) => { return document.elementFromPoint(x, y) }     
+
+    // Return false if it's not in the viewport
+    if (rect.right < 0 || rect.bottom < 10 
+            || rect.left > vWidth || rect.top > vHeight -10)
+        return false;
+
+    // Return true if any of its four corners are visible
+    return (
+          el.contains(efp(rect.left,  rect.top))
+      ||  el.contains(efp(rect.right, rect.top))
+      ||  el.contains(efp(rect.right, rect.bottom))
+      ||  el.contains(efp(rect.left,  rect.bottom))
+    )
+}
 
   render() {
     

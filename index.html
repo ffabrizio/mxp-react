@@ -26,21 +26,78 @@
       padding: 1.0em 0 1.0em 0;
     }
     
-    .module {
-      border: solid 1px grey
+    #root {
+      padding:10px;
+      background: lightgrey;
+      display:block;
+      color: black;
+    }
+    
+    .inactive {
+      opacity: 0.1;
+      transition: opacity 500ms ease-in;
     }
     
     .active{ 
-      border: solid 2px red
+      opacity: 1;
+      transition: opacity 500ms ease-in;
+    }
+    
+    .fade-enter {
+      opacity: 0.01;
+    }
+
+    .fade-enter.fade-enter-active {
+      opacity: 1;
+      transition: opacity 500ms ease-in;
+    }
+
+    .fade-leave {
+      opacity: 1;
+    }
+
+    .fade-leave.fade-leave-active {
+      opacity: 0.01;
+      transition: opacity 500ms ease-in;
     }
     
     video {
       width: 100%    !important;
       height: auto   !important;
     }
+    
+    input.name-input {
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 1.0em;
+      height: 30px;
+      border: 0;
+      background: lightblue;
+    }
   </style>
   <body>
     <div id="root"></div>
+    <script>
+      var defaultTxt = ['Aenean consectetur tincidunt efficitur. Vivamus a justo et mi dapibus fringilla. Maecenas cursus arcu vel mauris efficitur vestibulum. Morbi quis leo in purus cursus vehicula. Ut dui ante, maximus vel nunc sed, mollis luctus mi. In at velit et ipsum euismod sodales id eget metus. Duis elementum nulla sit amet ligula pharetra congue. Donec sit amet nisl sed purus ornare rutrum. Maecenas vitae feugiat magna, nec maximus est.']
+
+      window.pageData = {
+        modules: [
+        { type: 'text', props: {key: '10'} },
+        { type: 'container', props: { key: '0'}, modules: [
+          { type: 'container', props: { key: '01'}, modules: [
+            { type: 'promo', props: { key: '000002', title: 'Promo title', content: defaultTxt[0] } }
+          ]}
+        ]},
+        { type: 'video',  props: { key: '1', videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2519425312458647946.mp4' } }, 
+        { type: 'promo', props: { key: '2', title: 'Promo title', content: defaultTxt[0] } },
+        { type: 'video',props: { key: '3', videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2519562740232961572.mp4' } },
+        { type: 'promo', props: { key: '4', title: 'Promo title', content: defaultTxt[0] } },
+        { type: 'video', props: { key: '5', videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2519573017122381411.mp4' } },
+        { type: 'promo', props: { key: '6', title: 'Promo title', content: defaultTxt[0] } },
+        { type: 'video', props: { key: '7', videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2520584847651543502.mp4' } },
+        { type: 'promo', props: {key: '8', title: 'Promo title', content: defaultTxt[0] } }
+        ]
+      }
+    </script>
     <script src="/static/bundle.js"></script>
     <noscript>
       <h1>Default title</h1>

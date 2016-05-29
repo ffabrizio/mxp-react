@@ -13,9 +13,22 @@ class UserStore {
     
   }
   
-  onSync(data) {
-    this.setState(data)
-    LocalProfile.set(this.state)
+  onSync(profile) {
+    this.setState({ fetching: true })
+    
+    Promise.resolve(profile)
+      .then((profile) => {
+        this.setState(profile)
+        LocalProfile.set(this.state)
+      })
+      .then(() => {
+        setTimeout(() => UserActions.syncComplete(), 500)
+      })
+  }
+  
+  onSyncComplete() {
+    console.log(this.state)
+    this.setState({ fetching: false })
   }
 
 }
