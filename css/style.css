@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300italic,900);
+
+html {
+  box-sizing: border-box;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0;
+  padding: 1.0em 0 1.0em 0;
+}
+
+#root {
+  padding:10px;
+  background: lightgrey;
+  display:block;
+  color: black;
+}
+
+.inactive {
+  opacity: 0.5;
+  transition: opacity 750ms ease-out;
+}
+
+.active{ 
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
+
+.fade-appear {
+   opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+   opacity: 1;
+   transition: opacity 250ms ease-in;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 100ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 100ms ease-in;
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+input.name-input {
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.0em;
+  height: 30px;
+  border: 0;
+  background: lightblue;
+}

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Motion, spring} from 'react-motion'
 import Container from './container'
 
 class Scroller extends Component {
@@ -33,7 +34,7 @@ class Scroller extends Component {
   play(v) {
     v.play().then(() => {
       if (this.playingVideo && this.playingVideo !== v) this.playingVideo.pause()
-        this.playingVideo = v
+      this.playingVideo = v
       })
   }
   
@@ -42,7 +43,18 @@ class Scroller extends Component {
       this.play(v)
     } else {
       v.pause()
-      this.playingVideo = v
+    }
+  }
+  
+  transitionEnter() {
+    return {
+      WebkitTransform: `translate3d(${spring(0)}px, ${spring(0)}px, 0)`,
+    }
+  }
+  
+  transitionExit() {
+    return {
+      WebkitTransform: `translate3d(${spring(20)}px, ${spring(0)}px, 0)`,
     }
   }
   
@@ -54,6 +66,12 @@ class Scroller extends Component {
       if (this.isElementInViewport(m)) { 
         this.modulesInViewPort.push(m)
         m.className = 'module active'
+        // spring(10).then((x) => { 
+        // m.style={
+        //     WebkitTransform: `translate3d(${x}px, ${x}px, 0)`,
+        //     transform: `translate3d(${x}px, ${x}px, 0)`,
+        //   }
+        // })
       } else {
         m.className = 'module inactive'
       }
@@ -72,7 +90,7 @@ class Scroller extends Component {
   
   isElementInViewport(el) {
     if (!el) return false
-    var rect     = el.getBoundingClientRect(),
+    let rect     = el.getBoundingClientRect(),
         vWidth   = window.innerWidth || doc.documentElement.clientWidth,
         vHeight  = (window.innerHeight || doc.documentElement.clientHeight),
         efp      = (x, y) => { return document.elementFromPoint(x, y) }     

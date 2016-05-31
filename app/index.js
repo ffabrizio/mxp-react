@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import Scroller from './components/scroller'
 import Container from './components/container'
 import Video from './components/video'
 import Promo from './components/promo'
 import Text from './components/text'
+import TestAnimation from './components/testanimation'
 
-const modules = {
+const moduleMap = {
   'container' : Container,
   'video' : Video,
   'promo' : Promo,
@@ -19,24 +19,20 @@ const moduleMapper = (module) => {
   if (module.modules) module.props.children = module.modules.map(moduleMapper)
   
   return (
-    React.createElement(modules[module.type], module.props)
+      React.createElement(moduleMap[module.type], module.props)
   )
 }
 
+const modules = window.pageData.modules.map(moduleMapper)
+
 ReactDOM.render(
-  
+  <div>
+  <TestAnimation copy="Welcome to POC II" />
   <Scroller>
-    <ReactCSSTransitionGroup
-      transitionName="fade" 
-      transitionAppear={true} 
-      transitionAppearTimeout={500} 
-      transitionEnterTimeout={500} 
-      transitionLeaveTimeout={300}>
-      <Container>
-        { window.pageData.modules.map(moduleMapper) }
-      </Container>
-    </ReactCSSTransitionGroup>
+      
+        { modules }
+
   </Scroller>
-  
+  </div>
   , document.getElementById('root')
 )

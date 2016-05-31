@@ -35,13 +35,15 @@ class Text extends Component {
   }
   
   render() {
-    let input = 
-    <input className="name-input" type="text" 
-      value={this.state.txt} 
-      onBlur={this.handleBlur} 
-      onFocus={this.handleFocus} 
-      onKeyPress={this.handleSubmit} 
-      onChange={this.handleKeyChange} />
+    let input = (
+        <input className="name-input" type="text" 
+          value={this.state.txt} 
+          onBlur={this.handleBlur} 
+          onFocus={this.handleFocus} 
+          onKeyPress={this.handleSubmit} 
+          onChange={this.handleKeyChange} />
+      )
+    
     
     return (
       <div>
