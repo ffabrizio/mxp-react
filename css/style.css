@@ -35,12 +35,12 @@ video {
     padding:10px;
 }
 
-.mainNav {
+.main-nav {
   background: #1d2224;
   color: white;
 }
 
-.promoNav {
+.promo-nav {
   background: #394a52;
   color: white;
 }
@@ -58,9 +58,16 @@ input.name-input {
 
 .img {
   width: 100%;
-  max-width: 350px;
+  max-width: 250px;
 }
 
 a.nav {
   color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.last {
+  margin-left: auto;
 }
