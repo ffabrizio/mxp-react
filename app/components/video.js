@@ -30,7 +30,7 @@ class Video extends Component {
   }
   
   pause() {
-    setTimeout(() => this.refs.video.pause(), 1000)
+    setTimeout(() => this.refs.video.pause(), 100)
   }
   
   render() {
@@ -51,7 +51,7 @@ class Video extends Component {
     }
     
     return (
-      <VisibilitySensor onChange={onChange}>
+      <VisibilitySensor partialVisibility={true} onChange={onChange}>
         <video ref="video" width="400" poster={poster} onClick={this.toggle}>
           <source src={mp4} type="video/mp4" />
           <source src={ogv} type="video/ogv" />

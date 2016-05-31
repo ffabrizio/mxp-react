@@ -37,12 +37,12 @@ video {
 
 .mainNav {
   background: #1d2224;
-  color: white
+  color: white;
 }
 
 .promoNav {
   background: #394a52;
-  color: white
+  color: white;
 }
 
 input.name-input {
@@ -51,7 +51,7 @@ input.name-input {
   height: 30px;
   border: 0;
   border-bottom: solid 1px;
-  background: lightslategray;
+  background: lightgrey;
   padding: 10px;
   margin-left: 10px;
 }
@@ -62,5 +62,5 @@ input.name-input {
 }
 
 a.nav {
-  color: white
+  color: white;
 }

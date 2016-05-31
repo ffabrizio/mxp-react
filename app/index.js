@@ -28,7 +28,7 @@ const modules = window.pageData.modules.map(moduleMapper)
 
 ReactDOM.render(
   <div>
-    <TestAnimation copy="Welcome to POC II" />
+    <TestAnimation copy="Welcome to POC III" />
     <Container>
       { modules }
     </Container>

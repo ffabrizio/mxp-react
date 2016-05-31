@@ -31,7 +31,7 @@ class Promo extends Component {
     }
 
     return (
-      <VisibilitySensor onChange={onChange}>
+      <VisibilitySensor partialVisibility={true} onChange={onChange}>
         <Motion key="3W0m" style={this.state.style}>
           {({x,y}) => 
           <div className="module" style={{
