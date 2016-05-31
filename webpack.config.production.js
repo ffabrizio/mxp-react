@@ -34,7 +34,7 @@ config.output = {
   path: './dist',
   pathInfo: true,
   publicPath: '/dist/',
-  filename: 'bundle.[hash].min.js'
+  filename: 'bundle.min.js'
 };
 
 module.exports = config;

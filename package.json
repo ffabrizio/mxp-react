@@ -28,7 +28,6 @@
     "alt": "^0.18.4",
     "alt-container": "^1.0.2",
     "react": "^15.0.1",
-    "react-addons-css-transition-group": "^15.1.0",
     "react-dom": "^15.0.1",
     "react-motion": "^0.4.3",
     "uuid": "^2.0.2"

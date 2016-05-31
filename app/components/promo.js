@@ -7,7 +7,7 @@ class Promo extends Component {
     let greet = <h2>{this.props.title}</h2>
     if (this.props.profile.user.name) {
       greet = 
-        <div key={this.props.profile.user.name}><h2>{this.props.title}</h2>
+        <div><h2>{this.props.title}</h2>
           <strong><em>Hi { this.props.profile.user.name }</em></strong>
         </div>
     }

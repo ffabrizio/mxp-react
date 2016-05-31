@@ -50,7 +50,6 @@ class Text extends Component {
         <p>
           {input}
         </p>
-        <hr />
       </div>
     )
   }

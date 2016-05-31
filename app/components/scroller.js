@@ -28,7 +28,7 @@ class Scroller extends Component {
     
     setTimeout(() => {
       this.play(videos[0])
-    }, 10)
+    }, 100)
   }
   
   play(v) {
@@ -46,17 +46,19 @@ class Scroller extends Component {
     }
   }
   
-  transitionEnter() {
-    return {
-      WebkitTransform: `translate3d(${spring(0)}px, ${spring(0)}px, 0)`,
-    }
-  }
-  
-  transitionExit() {
-    return {
-      WebkitTransform: `translate3d(${spring(20)}px, ${spring(0)}px, 0)`,
-    }
-  }
+  inViewComponentStyles() {
+		return {
+			top: 0,
+			left: 0
+		};
+	}
+
+	outOfViewComponentStyles() {
+		return {
+			left: spring(10),
+			top: spring(10)
+		};
+	}
   
   scroll() {
     this.modulesInViewPort = []
@@ -66,12 +68,6 @@ class Scroller extends Component {
       if (this.isElementInViewport(m)) { 
         this.modulesInViewPort.push(m)
         m.className = 'module active'
-        // spring(10).then((x) => { 
-        // m.style={
-        //     WebkitTransform: `translate3d(${x}px, ${x}px, 0)`,
-        //     transform: `translate3d(${x}px, ${x}px, 0)`,
-        //   }
-        // })
       } else {
         m.className = 'module inactive'
       }

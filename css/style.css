@@ -29,12 +29,14 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 .inactive {
   opacity: 0.5;
-  transition: opacity 750ms ease-out;
+  top: -500px;
+  transition: opacity 750ms ease-out, top 750ms ease-out;
 }
 
 .active{ 
   opacity: 1;
-  transition: opacity 250ms ease-in;
+  top: 0px;
+  transition: opacity 250ms ease-in, top 250ms ease-in;
 }
 
 .fade-appear {
@@ -74,5 +76,7 @@ input.name-input {
   font-size: 1.0em;
   height: 30px;
   border: 0;
+  border-bottom: solid 1px;
   background: lightblue;
+  padding: 10px;
 }
