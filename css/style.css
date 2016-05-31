@@ -21,54 +21,28 @@ h1, h2, h3, h4, h5, h6, p, ul {
 }
 
 #root {
-  padding:10px;
   background: lightgrey;
   display:block;
   color: black;
 }
 
-.inactive {
-  opacity: 0.5;
-  top: -500px;
-  transition: opacity 750ms ease-out, top 750ms ease-out;
-}
-
-.active{ 
-  opacity: 1;
-  top: 0px;
-  transition: opacity 250ms ease-in, top 250ms ease-in;
-}
-
-.fade-appear {
-   opacity: 0.01;
-}
-
-.fade-appear.fade-appear-active {
-   opacity: 1;
-   transition: opacity 250ms ease-in;
-}
-
-.fade-enter {
-  opacity: 0.01;
-}
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 100ms ease-in;
-}
-
-.fade-leave {
-  opacity: 1;
-}
-
-.fade-leave.fade-leave-active {
-  opacity: 0.01;
-  transition: opacity 100ms ease-in;
-}
-
 video {
   width: 100%    !important;
   height: auto   !important;
+}
+
+.module {
+    padding:10px;
+}
+
+.mainNav {
+  background: #1d2224;
+  color: white
+}
+
+.promoNav {
+  background: #394a52;
+  color: white
 }
 
 input.name-input {
@@ -77,6 +51,16 @@ input.name-input {
   height: 30px;
   border: 0;
   border-bottom: solid 1px;
-  background: lightblue;
+  background: lightslategray;
   padding: 10px;
+  margin-left: 10px;
+}
+
+.img {
+  width: 100%;
+  max-width: 350px;
+}
+
+a.nav {
+  color: white
 }
