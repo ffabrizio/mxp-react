@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Motion, spring} from 'react-motion'
-import VisibilitySensor from 'react-visibility-sensor'
+import VisibilitySensor from './visibilitysensor'
 
 class Promo extends Component {
   
@@ -26,7 +26,7 @@ class Promo extends Component {
       if (inView) {
         this.setState( { style: { x: spring(0), y: spring(0) } } )
       } else {
-        this.setState( { style: { x: spring(5), y: spring(5) } } )
+        this.setState( { style: { x: spring(0), y: spring(100) } } )
       }
     }
 

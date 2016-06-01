@@ -13,6 +13,8 @@ html {
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul {
@@ -33,6 +35,17 @@ video {
 
 .module {
     padding:10px;
+}
+
+.noscroll { overflow: hidden; }
+
+.nav-wrapper {
+
+  position: fixed;
+  top: 0; left: 0; top: 0; bottom: 0;
+  width: 100%;
+  z-index: 20;
+  overflow-y: auto;
 }
 
 .main-nav {
@@ -58,7 +71,7 @@ input.name-input {
 
 .img {
   width: 100%;
-  max-width: 250px;
+  max-width: 220px;
 }
 
 a.nav {

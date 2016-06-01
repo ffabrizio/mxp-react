@@ -1,5 +1,3 @@
-import uuid from 'uuid'
-
 const profileLocalStorageKey = 'mxp-profile'
 
 class LocalProfile {
@@ -25,7 +23,7 @@ class LocalProfile {
   getInitialProfile() {
     
     return {
-      id: uuid.v1(),
+      id: 'abcd',
       user: {
         name: '',
         location: '',

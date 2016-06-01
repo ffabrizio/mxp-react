@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import VisibilitySensor from 'react-visibility-sensor'
+import VisibilitySensor from './visibilitysensor'
 
 class Video extends Component {
   
