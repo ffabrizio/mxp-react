@@ -38,15 +38,18 @@ video {
 }
 
 .noscroll { overflow: hidden; }
+.scroll { bottom: 0}
 
 .nav-wrapper {
 
   position: fixed;
-  top: 0; left: 0; top: 0; bottom: 0;
+  top: 0; left: 0; top: 0;
   width: 100%;
   z-index: 20;
   overflow-y: auto;
 }
+
+
 
 .main-nav {
   background: #1d2224;

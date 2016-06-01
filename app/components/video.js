@@ -12,7 +12,8 @@ class Video extends Component {
   }
   
   
-  toggle() {
+  toggle(e) {
+
     if (this.refs.video.paused) {
       this.play()
     } else {
@@ -43,10 +44,12 @@ class Video extends Component {
       .replace('.mp4', '.jpg')
     
     let onChange = (inView) => {
-      if (inView) {
-        this.play()
-      } else {
-        this.pause()
+      if (this.props.autoplay === true) {
+        if (inView) {
+          this.play()
+        } else {
+          this.pause()
+        }
       }
     }
     

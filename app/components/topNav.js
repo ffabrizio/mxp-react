@@ -41,9 +41,11 @@ class TopNav extends Component {
       if (this.state.submenuclosed) {
         this.setState( {submenuclosed: false})
         document.body.classList.add('noscroll')
+        this.refs.wrapper.classList.add('scroll')
       } else if (!changed) {
         this.setState( {submenuclosed: true})
         document.body.classList.remove('noscroll')
+        this.refs.wrapper.classList.remove('scroll')
       }
     }
     
@@ -51,6 +53,7 @@ class TopNav extends Component {
       if (!e.target.href) {
         this.setState({submenuclosed: true})
         document.body.classList.remove('noscroll')
+        this.refs.wrapper.classList.remove('scroll')
       }
     }
     
@@ -80,7 +83,7 @@ class TopNav extends Component {
     }
     
     return (
-        <div className="nav-wrapper">
+        <div ref="wrapper" className="nav-wrapper">
           <div className="main-nav" onClick={onContainerClick}>
           
             <div style={wrapperStyle}>
