@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-
 import Container from './components/container'
 import Video from './components/video'
 import Promo from './components/promo'
@@ -18,9 +17,8 @@ const moduleMap = {
 
 const moduleMapper = (module) => {
   if (module.modules) module.props.children = module.modules.map(moduleMapper)
-  
   return (
-      React.createElement(moduleMap[module.type], module.props)
+    React.createElement(moduleMap[module.type], module.props)
   )
 }
 

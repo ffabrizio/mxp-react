@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Motion, spring} from 'react-motion'
+import {Parallax, Background} from 'react-parallax'
 import VisibilitySensor from './visibilitysensor'
 
 class Promo extends Component {
@@ -34,13 +35,18 @@ class Promo extends Component {
       <VisibilitySensor partialVisibility={true} onChange={onChange}>
         <Motion key="3W0m" style={this.state.style}>
           {({x,y}) => 
-          <div className="module" style={{
-              WebkitTransform: `translate3d(${x}px, ${y}px, 0)`,
-              transform: `translate3d(${x}px, ${y}px, 0)`,
-            }}>
-            { greet }
-            <p>{this.props.content}</p>
-          </div>
+          <Parallax strength={300}>
+            <Background>
+                <img src="https://www.mazda.co.uk/assets/master/cars/2015-mazda-cx-3/challenge-the-rhythm/homepage/hero/MX-5_Showroom_Desktop_v2.jpg" />
+            </Background>
+            <div className="module promo" style={{
+                WebkitTransform: `translate3d(${x}px, ${y}px, 0)`,
+                transform: `translate3d(${x}px, ${y}px, 0)`,
+              }}>
+              { greet }
+              <p>{this.props.content}</p>
+            </div>
+          </Parallax>
           }
         </Motion>
       </VisibilitySensor>
