@@ -23,10 +23,11 @@ const moduleMapper = (module) => {
 }
 
 const modules = window.pageData.modules.map(moduleMapper)
+const title = document.title
 
 ReactDOM.render(
   <div>
-    <TestAnimation copy="Welcome to POC III" />
+    <TestAnimation copy={title} />
     <Container>
       { modules }
     </Container>
