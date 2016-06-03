@@ -11,12 +11,15 @@
       <p>This is a playground</p>
     </div>
     <script>
+      var root = document.getElementById('root');
+      var title = root.getElementsByTagName('h1')[0].innerText;
       var defaultTxt = ['Aenean consectetur tincidunt efficitur. Vivamus a justo et mi dapibus fringilla. Maecenas cursus arcu vel mauris efficitur vestibulum. Morbi quis leo in purus cursus vehicula. Ut dui ante, maximus vel nunc sed, mollis luctus mi. In at velit et ipsum euismod sodales id eget metus. Duis elementum nulla sit amet ligula pharetra congue. Donec sit amet nisl sed purus ornare rutrum. Maecenas vitae feugiat magna, nec maximus est.']
-
+      
       window.pageData = {
         modules: [
+          { type: 'package1.title', props: {key: '23523', copy: title}},
         { 
-          type: 'nav', props: {
+          type: 'package1.nav', props: {
             key: 'MO4t', 
             links: [
               { key: 'cars', name: 'Cars', url: '#', links: [
@@ -52,21 +55,22 @@
               ] } 
            ]
         }}, 
-        { type: 'text', props: {key: 'vPU4'} },
-        { type: 'container', props: { key: 'Usc4'}, modules: [
-          { type: 'container', props: { key: '5MUn'}, modules: [
-            { type: 'promo', props: { key: 'g3C6', title: 'Promo title', content: defaultTxt[0] } }
+        { type: 'package1.text', props: {key: 'vPU4'} },
+        { type: 'package1.container', props: { key: 'Usc4'}, modules: [
+          { type: 'package1.container', props: { key: '5MUn'}, modules: [
+            { type: 'package1.promo', props: { key: 'g3C6', title: 'Promo title', content: defaultTxt[0] } }
           ]}
         ]},
-        { type: 'video',  props: { key: '0qFH', autoplay: true, videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2519425312458647946.mp4' } }, 
-        { type: 'promo', props: { key: 'G5ke', title: 'Promo title', content: defaultTxt[0] } },
-        { type: 'video',props: { key: 'Zc9X', autoplay: true, videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2519562740232961572.mp4' } },
-        { type: 'promo', props: { key: 'SU3v', title: 'Promo title', content: defaultTxt[0] } },
-        { type: 'video', props: { key: 'AJn2', autoplay: true, videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2519573017122381411.mp4' } },
-        { type: 'promo', props: { key: 'P6fW', title: 'Promo title', content: defaultTxt[0] } },
-        { type: 'video', props: { key: 'k5Vk', autoplay: true, videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2520584847651543502.mp4' } },
-        { type: 'promo', props: {key: 'R5Ah', title: 'Promo title', content: defaultTxt[0] } }
-        ]
+        { type: 'package1.video',  props: { key: '0qFH', autoplay: true, videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2519425312458647946.mp4' } }, 
+        { type: 'package1.promo', props: { key: 'G5ke', title: 'Promo title', content: defaultTxt[0] } },
+        { type: 'package1.video',props: { key: 'Zc9X', autoplay: true, videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2519562740232961572.mp4' } },
+        { type: 'package1.promo', props: { key: 'SU3v', title: 'Promo title', content: defaultTxt[0] } },
+        { type: 'package1.video', props: { key: 'AJn2', autoplay: true, videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2519573017122381411.mp4' } },
+        { type: 'package1.promo', props: { key: 'P6fW', title: 'Promo title', content: defaultTxt[0] } },
+        { type: 'package1.video', props: { key: 'k5Vk', autoplay: true, videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2520584847651543502.mp4' } },
+        { type: 'package1.promo', props: {key: 'R5Ah', title: 'Promo title', content: defaultTxt[0] } }
+        ],
+        moduleMap : {}
       }
     </script>
     <script src="/static/bundle.js"></script>
