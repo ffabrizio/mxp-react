@@ -78,7 +78,7 @@ module.exports = React.createClass({
         right: window.innerWidth || document.documentElement.clientWidth
       };
     }
-
+    
     var visibilityRect = {
       top: rect.top >= containmentRect.top,
       left: rect.left >= containmentRect.left,

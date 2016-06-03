@@ -54,7 +54,7 @@ class Video extends Component {
     }
     
     return (
-      <VisibilitySensor partialVisibility={true} onChange={onChange}>
+      <VisibilitySensor onChange={onChange}>
         <video ref="video" width="400" poster={poster} onClick={this.toggle}>
           <source src={mp4} type="video/mp4" />
           <source src={ogv} type="video/ogv" />

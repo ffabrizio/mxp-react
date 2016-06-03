@@ -35,7 +35,7 @@ class Promo extends Component {
       <VisibilitySensor partialVisibility={true} onChange={onChange}>
         <Motion key="3W0m" style={this.state.style}>
           {({x,y}) => 
-          <Parallax strength={300}>
+          <Parallax strength={300} blur={100}>
             <Background>
                 <img src="https://www.mazda.co.uk/assets/master/cars/2015-mazda-cx-3/challenge-the-rhythm/homepage/hero/MX-5_Showroom_Desktop_v2.jpg" />
             </Background>

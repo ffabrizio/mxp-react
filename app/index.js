@@ -7,12 +7,12 @@ import Text from './components/text'
 import TopNav from './components/topNav'
 import TestAnimation from './components/testanimation'
 
-window.pageData.moduleMap['package1.title'] = TestAnimation
-window.pageData.moduleMap['package1.container'] = Container
-window.pageData.moduleMap['package1.video'] = Video
-window.pageData.moduleMap['package1.promo'] = Promo
-window.pageData.moduleMap['package1.text'] = Text
-window.pageData.moduleMap['package1.nav'] = TopNav
+window.pageData.moduleMap['title'] = TestAnimation
+window.pageData.moduleMap['container'] = Container
+window.pageData.moduleMap['video'] = Video
+window.pageData.moduleMap['promo'] = Promo
+window.pageData.moduleMap['text'] = Text
+window.pageData.moduleMap['nav'] = TopNav
 
 var moduleMapper = function(module) {
   if (module.modules) module.props.children = module.modules.map(moduleMapper);
