@@ -23,7 +23,8 @@ const moduleMapper = (module) => {
 }
 
 const modules = window.pageData.modules.map(moduleMapper)
-const title = document.title
+const root = document.getElementById('root')
+const title = document.getElementsByTagName('h1', root)[0].innerText
 
 ReactDOM.render(
   <div>
