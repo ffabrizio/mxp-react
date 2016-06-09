@@ -6,19 +6,19 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div id="root">
+    <div id="mxp">
       <h1>Proof of concept</h1>
       <p>This is a playground</p>
     </div>
     <script>
-      var defaultTxt = ['Aenean consectetur tincidunt efficitur. Vivamus a justo et mi dapibus fringilla. Maecenas cursus arcu vel mauris efficitur vestibulum. Morbi quis leo in purus cursus vehicula. Ut dui ante, maximus vel nunc sed, mollis luctus mi. In at velit et ipsum euismod sodales id eget    metus. Duis elementum nulla sit amet ligula pharetra congue. Donec sit amet nisl sed purus ornare rutrum. Maecenas vitae feugiat magna, nec maximus est.']
-      var root = document.getElementById('root'),
-        title = root.getElementsByTagName('h1')[0].innerText;
+      var mountPoint = document.getElementById('mxp'),
+        defaultTxt = ['Aenean consectetur tincidunt efficitur. Vivamus a justo et mi dapibus fringilla. Maecenas cursus arcu vel mauris efficitur vestibulum. Morbi quis leo in purus cursus vehicula. Ut dui ante, maximus vel nunc sed, mollis luctus mi. In at velit et ipsum euismod sodales id eget      metus. Duis elementum nulla sit amet ligula pharetra congue. Donec sit amet nisl sed purus ornare rutrum. Maecenas vitae feugiat magna, nec maximus est.'],
+        title = mountPoint.getElementsByTagName('h1')[0].innerText;
 
-      window.pageData = {
-        root,
-        modules: [
-          { type: 'container', props: { key: 'fsdfs' }, modules: [
+      window.mxp = {
+        mountPoint,
+        data: [
+          { type: 'container', props: { key: 'fsdfs' }, submodules: [
             { type: 'title', props: { key: '23523', copy: title } },
             { type: 'nav', props: {
               key: 'MO4t',
@@ -60,22 +60,22 @@
             }
           ]}},
             { type: 'text', props: { key: 'vPU4' } },
-            { type: 'container', props: { key: 'Usc4' }, modules: [
-              { type: 'container', props: { key: '5MUn' }, modules: [
-                { type: 'promo', props: { key: 'g3C6', title: 'Promo title', content: defaultTxt[0] } }
+            { type: 'container', props: { key: 'Usc4' }, submodules: [
+              { type: 'container', props: { key: '5MUn' }, submodules: [
+                { type: 'promo', props: { key: 'g3C6', img: "https://www.mazda.co.uk/assets/master/cars/2015-mazda-cx-3/challenge-the-rhythm/homepage/hero/MX-5_Showroom_Desktop_v2.jpg", title: 'Promo title', content: defaultTxt[0] } }
               ]}
             ]},
             { type: 'video', props: { key: '0qFH', autoplay: true, videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2519425312458647946.mp4' } },
-            { type: 'promo', props: { key: 'G5ke', title: 'Promo title', content: defaultTxt[0] } },
+            { type: 'promo', props: { key: 'G5ke', img: "https://www.mazda.co.uk/assets/master/cars/2015-mazda-cx-3/challenge-the-rhythm/homepage/hero/MX-5_Showroom_Desktop_v2.jpg", title: 'Promo title', content: defaultTxt[0] } },
             { type: 'video', props: { key: 'Zc9X', autoplay: true, videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2519562740232961572.mp4' } },
-            { type: 'promo', props: { key: 'SU3v', title: 'Promo title', content: defaultTxt[0] } },
+            { type: 'promo', props: { key: 'SU3v', img: "https://www.mazda.co.uk/assets/master/cars/2015-mazda-cx-3/challenge-the-rhythm/homepage/hero/MX-5_Showroom_Desktop_v2.jpg", title: 'Promo title', content: defaultTxt[0] } },
             { type: 'video', props: { key: 'AJn2', autoplay: true, videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2519573017122381411.mp4' } },
-            { type: 'promo', props: { key: 'P6fW', title: 'Promo title', content: defaultTxt[0] } },
+            { type: 'promo', props: { key: 'P6fW', img: "https://www.mazda.co.uk/assets/master/cars/2015-mazda-cx-3/challenge-the-rhythm/homepage/hero/MX-5_Showroom_Desktop_v2.jpg", title: 'Promo title', content: defaultTxt[0] } },
             { type: 'video', props: { key: 'k5Vk', autoplay: true, videoUrl: 'http://cdnlive.syzygy.net/mazda-videos/mme/960/2520584847651543502.mp4' } },
-            { type: 'promo', props: { key: 'R5Ah', title: 'Promo title', content: defaultTxt[0] } }
+            { type: 'promo', props: { key: 'R5Ah', img: "https://www.mazda.co.uk/assets/master/cars/2015-mazda-cx-3/challenge-the-rhythm/homepage/hero/MX-5_Showroom_Desktop_v2.jpg", title: 'Promo title', content: defaultTxt[0] } }
           ]
         }],
-        moduleMap: {}
+        modules: {}
       }
     </script>
     <script src="/static/bundle.js"></script>

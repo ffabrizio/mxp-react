@@ -38,7 +38,7 @@ class Text extends ProfileComponent {
   render() {
 
     let input = (
-        <input className="name-input" type="text" 
+        <input ref="input" className="name-input" type="text" 
           value={this.state.txt} 
           onBlur={this.handleBlur} 
           onFocus={this.handleFocus} 

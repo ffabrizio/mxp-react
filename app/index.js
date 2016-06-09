@@ -1,24 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
+import Page from './components/page'
 import Container from './components/container'
 import Video from './components/video'
 import Promo from './components/promo'
 import Text from './components/text'
-import TopNav from './components/topNav'
+import TopNav from './components/topnav'
 import TestAnimation from './components/testanimation'
 
-window.pageData.moduleMap['title'] = TestAnimation
-window.pageData.moduleMap['container'] = Container
-window.pageData.moduleMap['video'] = Video
-window.pageData.moduleMap['promo'] = Promo
-window.pageData.moduleMap['text'] = Text
-window.pageData.moduleMap['nav'] = TopNav
+window.mxp.modules['title'] = TestAnimation
+window.mxp.modules['container'] = Container
+window.mxp.modules['video'] = Video
+window.mxp.modules['promo'] = Promo
+window.mxp.modules['text'] = Text
+window.mxp.modules['nav'] = TopNav
 
-var moduleMapper = function(module) {
-  if (module.modules) module.props.children = module.modules.map(moduleMapper);
-  return React.createElement(window.pageData.moduleMap[module.type], module.props);
-}
+console.log('mxp', window.mxp)
 
-var modules = window.pageData.modules.map(moduleMapper);
-var reactRoot = React.createElement('div', {}, modules);
-ReactDOM.render(reactRoot, document.getElementById('root'))
+ReactDOM.render(
+  <Page
+    modules={window.mxp.modules}
+    data={window.mxp.data}
+  ></Page>, window.mxp.mountPoint)

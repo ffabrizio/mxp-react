@@ -1,15 +1,13 @@
 import React, {Component} from 'react'
-import UserStore from '../stores/userstore'
 
 class Container extends Component {
   
-
   render() {
     
     return (
-      <div>
+      <section>
         {this.props.children}
-      </div>
+      </section>
     )
   }
 }

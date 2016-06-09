@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import ProfileComponent from './profilecomponent'
 import {Motion, spring} from 'react-motion'
 import {Parallax, Background} from 'react-parallax'
+import ProfileComponent from './profilecomponent'
 import VisibilitySensor from './visibilitysensor'
 
 class Promo extends ProfileComponent {
@@ -17,7 +17,7 @@ class Promo extends ProfileComponent {
 
   render() {
 
-    let greet = <h2>{this.props.title} !!!</h2>
+    let greet = <h2>{this.props.title}</h2>
     if (this.state.user && this.state.user.name) {
       greet = 
         <div><h2>{this.props.title}</h2>
@@ -40,7 +40,7 @@ class Promo extends ProfileComponent {
           {({x,y}) => 
           <Parallax strength={300} blur={100}>
             <Background>
-                <img src="https://www.mazda.co.uk/assets/master/cars/2015-mazda-cx-3/challenge-the-rhythm/homepage/hero/MX-5_Showroom_Desktop_v2.jpg" />
+                <img src={this.props.img} />
             </Background>
             <div className="module promo" style={{
                 WebkitTransform: `translate3d(${x}px, ${y}px, 0)`,
