@@ -5,6 +5,7 @@ class UserActions {
   constructor() {
     
     this.generateActions (
+      'initStore',
       'sync',
       'syncComplete'
     )

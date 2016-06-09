@@ -8,13 +8,9 @@ class Container extends Component {
   render() {
     
     return (
-      <AltContainer
-        stores={[UserStore]}
-        inject={{
-          profile: () => UserStore.getState()
-        }}>
+      <div>
         {this.props.children}
-      </AltContainer>
+      </div>
     )
   }
 }

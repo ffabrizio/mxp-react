@@ -8,27 +8,22 @@ class UserStore {
 
   constructor() {
     
-    this.state = LocalProfile.get()
+    this.state = { }
     this.bindActions(UserActions)
     
   }
-  
-  onSync(profile) {
-    this.setState({ fetching: true })
-    
-    Promise.resolve(profile)
-      .then((profile) => {
-        this.setState(profile)
-        LocalProfile.set(this.state)
-      })
-      .then(() => {
-        setTimeout(() => UserActions.syncComplete(), 500)
-      })
+
+  onInitStore() {
+    setTimeout(() => UserActions.syncComplete(LocalProfile.get()), 500)
   }
   
-  onSyncComplete() {
-    console.log(this.state)
-    this.setState({ fetching: false })
+  onSync(profile) {
+    setTimeout(() => UserActions.syncComplete(profile), 500)
+  }
+  
+  onSyncComplete(profile) {
+    this.setState(profile)
+    LocalProfile.set(profile)
   }
 
 }

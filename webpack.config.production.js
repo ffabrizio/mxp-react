@@ -5,7 +5,7 @@ config.bail = true;
 config.debug = false;
 config.profile = false;
 config.devtool = '#source-map';
-config.entry = './app/index';
+config.entry = './app/export';
 config.plugins = [
   new webpack.optimize.OccurenceOrderPlugin(true),
   new webpack.optimize.DedupePlugin(),

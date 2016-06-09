@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
+import ProfileComponent from './profilecomponent'
 import UserActions from '../actions/useractions'
 
-class Text extends Component {
+class Text extends ProfileComponent {
   constructor(props) {
     super(props)
     
     this.state = {
-      txt: this.props.profile.user.name || 'Your name'
+      txt: 'Your name'
     }
     
     this.handleBlur = this.handleBlur.bind(this)
@@ -35,6 +36,7 @@ class Text extends Component {
   }
   
   render() {
+
     let input = (
         <input className="name-input" type="text" 
           value={this.state.txt} 

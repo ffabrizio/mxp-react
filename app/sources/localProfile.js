@@ -11,7 +11,7 @@ class LocalProfile {
     } else {
       profile = JSON.parse(profile)
     }
-    
+
     return profile
   }
   

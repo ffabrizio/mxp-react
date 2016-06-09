@@ -1,24 +1,27 @@
 import React, {Component} from 'react'
+import ProfileComponent from './profilecomponent'
 import {Motion, spring} from 'react-motion'
 import {Parallax, Background} from 'react-parallax'
 import VisibilitySensor from './visibilitysensor'
 
-class Promo extends Component {
+class Promo extends ProfileComponent {
   
   constructor(props) {
     super(props)
+
     this.state = {
-      style: {x: 0, y: 0}
+      style: {x: 0, y: 0},
+      user: {}
     }
   }
-  
+
   render() {
 
-    let greet = <h2>{this.props.title}</h2>
-    if (this.props.profile.user.name) {
+    let greet = <h2>{this.props.title} !!!</h2>
+    if (this.state.user && this.state.user.name) {
       greet = 
         <div><h2>{this.props.title}</h2>
-          <strong><em>Hi { this.props.profile.user.name }</em></strong>
+          <strong><em>Hi { this.state.user.name }</em></strong>
         </div>
     }
     
