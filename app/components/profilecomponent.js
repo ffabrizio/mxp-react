@@ -14,7 +14,7 @@ class ProfileComponent extends Component {
   }
 
   onProfileChange(state) {
-    this.setState(state)
+    this.setState({profile: state})
   }
 
 }

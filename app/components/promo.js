@@ -10,18 +10,17 @@ class Promo extends ProfileComponent {
     super(props)
 
     this.state = {
-      style: {x: 0, y: 0},
-      user: {}
+      style: {x: 0, y: 0}
     }
   }
 
   render() {
 
     let greet = <h2>{this.props.title}</h2>
-    if (this.state.user && this.state.user.name) {
+    if (this.state.profile && this.state.profile.user && this.state.profile.user.name) {
       greet = 
         <div><h2>{this.props.title}</h2>
-          <strong><em>Hi { this.state.user.name }</em></strong>
+          <strong><em>Hi { this.state.profile.user.name }</em></strong>
         </div>
     }
     

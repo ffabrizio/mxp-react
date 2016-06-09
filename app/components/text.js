@@ -36,7 +36,6 @@ class Text extends ProfileComponent {
   }
   
   render() {
-
     let input = (
         <input ref="input" className="name-input" type="text" 
           value={this.state.txt} 

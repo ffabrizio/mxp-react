@@ -17,13 +17,19 @@ class UserStore {
     setTimeout(() => UserActions.syncComplete(LocalProfile.get()), 500)
   }
   
-  onSync(profile) {
-    setTimeout(() => UserActions.syncComplete(profile), 500)
+  onSync(data) {
+    setTimeout(() => UserActions.syncComplete(data), 500)
   }
   
-  onSyncComplete(profile) {
+  onSyncComplete(data) {
+    let profile = this.extend(this.state, data)
     this.setState(profile)
     LocalProfile.set(profile)
+  }
+
+  extend(o, n) {
+    Object.keys(n).forEach((key) => { o[key] = n[key] })
+    return o
   }
 
 }
