@@ -16,6 +16,12 @@ class Text extends ProfileComponent {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  onProfileChange(state) {
+    if (state.user) {
+      this.setState({txt: state.user.name})
+    }
+  }
+
   handleBlur(e) {
     e.target.value = this.state.txt
   }
@@ -47,11 +53,7 @@ class Text extends ProfileComponent {
     
     
     return (
-      <div>
-        <p>
-          {input}
-        </p>
-      </div>
+      <p>{input}</p>
     )
   }
 }
